@@ -18,7 +18,8 @@ function Header(props) {
     const { classes } = props;
     return (
         <div>
-            <AppBar color='primary'>
+            <h1>Header</h1>
+            {/* <AppBar color='primary'>
                 <Toolbar>
                     <IconButton color="inherit" aria-label="Menu">
                         <MenuIcon />
@@ -26,7 +27,7 @@ function Header(props) {
                     <Typography variant="h6" color="inherit" className={classes.grow}> Checklist </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
         </div>
     );
 }
