@@ -18,7 +18,13 @@ function Header(props) {
     const { classes } = props;
     return (
         <div>
-            <h1>Header</h1>
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h5" color="inherit" >
+                        Checklist
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             {/* <AppBar color='primary'>
                 <Toolbar>
                     <IconButton color="inherit" aria-label="Menu">

@@ -6,6 +6,7 @@ import HomePage from './HomePage/HomePage';
 import Footer from './Layouts/Footer';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
+import Panels from './Exercices/index';
 
 
 export default class App extends Component {
@@ -35,13 +36,10 @@ export default class App extends Component {
     return (
       <React.Fragment>
           <Header />
-          {/* style={{ marginTop:"100px" }} */}
           <div >
-            <Button id="chouette-boutton" variant="contained" onClick={this.hideChouette}>
-              Default
-            </Button>
-
+            
             {text}
+            <Panels />
           </div>
           <Footer />
       </React.Fragment>
