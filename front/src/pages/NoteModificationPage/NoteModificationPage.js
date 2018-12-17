@@ -1,5 +1,5 @@
-function HomePage(props) {
+function NoteModificationPage(props) {
     return (
-        <div></div>
+        <div>Pouet</div>
     )
 }
