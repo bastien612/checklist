@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Layouts/Header';
 import HomePage from './pages/HomePage/HomePage';
-import Layout from './components/Layouts/Layout';
 import ConfigPage from './pages/ConfigPage/ConfigPage';
-import Footer from './components/Layouts/Footer';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -38,11 +35,8 @@ export default class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage}/>
               <Route path="/config" component={ConfigPage}/>
-              <Route path="/layout" render={(props) => <Layout {...props} page={ConfigPage} title="titre!"/>}/>
             </React.Fragment>
           </Router>
-        
-          
       </React.Fragment>
 
       // <Route path="/greeting/:name" render={(props) => <Greeting text="Hello, " {...props} />} />
