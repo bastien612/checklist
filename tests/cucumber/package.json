@@ -1,0 +1,15 @@
+{
+  "name": "cucumber",
+  "version": "1.0.0",
+  "description": "Spike on cucumber to test React",
+  "main": "index.js",
+  "author": "Bastien",
+  "license": "MIT",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "devDependencies": {
+    "cucumber": "^5.0.2",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

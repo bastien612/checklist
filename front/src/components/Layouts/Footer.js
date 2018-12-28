@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs, Tab, Paper } from '@material-ui/core';
 
 function Footer(props) {
-    const { classes } = props;
+    // const { classes } = props;
     return (
         <Paper>
         <Tabs

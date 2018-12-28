@@ -1,11 +1,21 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardContent from'@material-ui/core/CardContent';
-import { CardHeader, Typography, Drawer, MuiThemeProvider, TextField, Paper, Grid } from '@material-ui/core';
+import CardContent from '@material-ui/core/CardContent';
+import { CardHeader, Typography, Grid, withStyles } from '@material-ui/core';
 import { getNotes } from 'services/NotesService';
 import Header from "components/Layouts/Header"
 import Footer from "components/Layouts/Footer";
+import DraftTextEditor from "components/TextEditor/DraftTextEditor"
 
+const styles = theme => ({
+    // noteCard : {
+    //     padding:'10 10 10 10',
+    //     display:'flex',
+    //     flexWrap:'wrap',
+    //     justifyContent: 'space-around',
+    //     overflow: 'hidden'
+    // }
+})
 
 class HomePage extends React.Component {
 
@@ -13,65 +23,46 @@ class HomePage extends React.Component {
         console.log("submit");
     }
 
-    render(props) {
-
+    render() {
+        // const classes = this.props;
         const notes = getNotes();
-        const cardList = notes.map(note => 
-                <Card key={note.id}>
+        const cardList = notes.map(note =>
+            <Grid key={note.id} item xs={12}>
+                <Card >
                     <CardHeader></CardHeader>
                     <CardContent>
                         <Typography>{note.title}</Typography>
                         <Typography>{note.content}</Typography>
                     </CardContent>
                 </Card>
-            );
+            </Grid>
+
+        );
 
         return (
-            <React.Fragment>
-                {/* <Drawer
-                anchor='left'
-                variant='temporary'
-                open={true}
-                ModalProps={{
-                    keepMounted: true,
-                }}>
-                    {cardList}
-                    
-                </Drawer>
-                */}
-                <Header/>
-                <Grid container xs={12}>
-                    <Grid item xs={3}>
-                        {cardList}
-                    </Grid>
-                    
-                    <Grid item xs={9}>
-                        <Paper>
-                            <form onSubmit={this.handleSubmit}>
-                                <label>Ma Liste :</label>
-                                <input type="text"></input> 
-                            </form>
-                            <form>
-                                <TextField
-                                id="MaNote"
-                                label="TestNote"
-                                defaultValue="pouet"
-                                />
-                            </form>
-                            
-                            Pouet
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam libero quam, eleifend eu elementum at, lobortis at massa. Praesent massa nibh, eleifend vel est sed, molestie gravida odio. Aliquam consequat, mi ut pretium maximus, lectus lorem vehicula ex, interdum convallis dolor nunc at erat. Maecenas pretium malesuada mattis. Pellentesque sagittis nisl eu nisl lacinia hendrerit. Nunc sed ipsum ut lorem fermentum scelerisque. In placerat interdum sapien ut commodo. Etiam fringilla augue nec mi sodales, tempus aliquam tortor dictum. Aenean pellentesque dui ac dui aliquet, nec viverra erat dictum. Maecenas at commodo mi, id dictum neque. Aliquam erat volutpat. Nullam varius, mi quis tempor interdum, urna purus aliquam justo, sed efficitur lectus velit eget leo. Morbi finibus malesuada ante at sollicitudin. Etiam in lorem tristique, ultrices massa non, euismod leo.
+            <Grid container direction="column" spacing={16}>
+                <Grid item>
+                    <Header />
+                </Grid>
+                <Grid item >
+                    <Grid container direction="row" spacing={8}>
+                        <Grid item xs={3} >
+                            <Grid container direction="column" spacing={8}>
+                                {cardList}
+                            </Grid>
+                        </Grid>
 
-                            Donec non nibh vestibulum, aliquam nisi non, fermentum est. Suspendisse scelerisque felis erat, sed dapibus dui gravida vel. Curabitur ornare sit amet ante eget porttitor. Donec auctor enim ut erat dapibus, quis scelerisque ex porttitor. Sed consequat, tortor quis viverra cursus, turpis ipsum accumsan elit, nec dictum mi mi eu neque. Praesent tincidunt a eros sit amet varius. Vestibulum nec commodo est. Mauris gravida enim arcu, eu fringilla tellus dapibus eu. Curabitur blandit tincidunt volutpat. Proin et massa orci.
-
-                            Quisque porttitor ipsum nec sem commodo egestas. Maecenas eu lectus pellentesque, scelerisque turpis eu, tempor ex. Nam bibendum tortor vel ligula fringilla efficitur. Duis suscipit tempor nulla, et euismod mauris efficitur sit amet. Cras egestas condimentum justo lacinia molestie. Quisque venenatis euismod volutpat. In faucibus vulputate sem, at lobortis turpis posuere nec. Quisque quis tristique lectus. Donec mollis mi sed mi mattis, vel auctor ante imperdiet. Vestibulum laoreet odio nunc, accumsan pellentesque erat finibus sit amet. Nulla euismod sodales nunc, a hendrerit justo luctus et. Morbi interdum diam non risus viverra sagittis. Suspendisse mattis, libero non tristique fringilla, odio libero ultricies nulla, sagittis mollis mauris nulla sed eros. Vivamus bibendum justo et quam sagittis pulvinar. Nam sit amet dolor sem. Etiam et finibus orci.
-                        </Paper>
+                        <Grid item xs={9}>
+                            <DraftTextEditor />
+                        </Grid>
                     </Grid>
                 </Grid>
-                <Footer/>
-            </React.Fragment>
+                <Grid item>
+                    <Footer />
+                </Grid>
+            </Grid>
         )
     }
 }
 
-export default HomePage;
+export default withStyles(styles)(HomePage);

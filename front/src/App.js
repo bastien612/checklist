@@ -22,12 +22,6 @@ export default class App extends Component {
 
   render() {
 
-    // if (this.state.visible) {
-    //   text=<Typography id="chouette" style={{ marginTop:"50px" }} variant="h1">Chouette</Typography>;
-    // } else {
-    //   text=null;
-    // }
-
     return (
       <React.Fragment>
           <Router>
