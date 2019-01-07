@@ -2,10 +2,7 @@ package com.notesmanager.productlist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.awt.print.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductListController {
@@ -13,9 +10,17 @@ public class ProductListController {
     @Autowired
     private ProductListRepository productListRepository;
 
-    @GetMapping("/lists")
-    public Page<ProductListModel> getProductListModelPage(Pageable pageable) {
-        return productListRepository.findAll();
+    @Autowired
+    private ProductListService service;
+
+    @RequestMapping(
+            value="/lists",
+            params = {"page", "size"},
+            method = RequestMethod.GET)
+    public Page<ProductListModel> getProductListModelPage(
+        @RequestParam("page")int page, @RequestParam("size")int size
+    ) {
+        return service.findPaginated(1, 1);
     }
 
 }
