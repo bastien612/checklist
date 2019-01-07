@@ -1,19 +1,19 @@
 ######################
 # Project Specific
 ######################
-/src/main/webapp/content/css/main.css
-/target/www/**
-/src/test/javascript/coverage/
+**/src/main/webapp/content/css/main.css
+**/target/www/**
+**/src/test/javascript/coverage/
 
 ######################
 # Node
 ######################
-/node/
+**/node/
 node_tmp/
 node_modules/
 npm-debug.log.*
-/.awcache/*
-/.cache-loader/*
+**/.awcache/*
+**/.cache-loader/*
 
 ######################
 # SASS
@@ -37,7 +37,7 @@ local.properties
 .settings/
 .loadpath
 .factorypath
-/src/main/resources/rebel.xml
+**/src/main/resources/rebel.xml
 
 # External tool builders
 .externalToolBuilders/**
@@ -71,14 +71,14 @@ out/
 ######################
 # Maven
 ######################
-/log/
-/target/
+**/log/
+**/target/
 
 ######################
 # Gradle
 ######################
 .gradle/
-/build/
+**/build/
 
 ######################
 # Package Files
@@ -113,8 +113,8 @@ Desktop.ini
 ######################
 # Directories
 ######################
-/bin/
-/deploy/
+**/bin/
+**/deploy/
 
 ######################
 # Logs
