@@ -11,6 +11,7 @@ const INLINE_STYLES = [
 
 const InlineStyleControls = (props) => {
     let currentStyle = props.editorState.getCurrentInlineStyle();
+    
     return (
         <div className="RichEditor-controls">
             {INLINE_STYLES.map(type =>

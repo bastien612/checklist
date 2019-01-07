@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { IconButton } from '@material-ui/core';
 
 const styles = {
     grow: {
@@ -19,6 +20,8 @@ function Header(props) {
                     <Typography variant="h5" color="inherit" >
                         Checklist
                     </Typography>
+
+                    
                 </Toolbar>
             </AppBar>
             {/* <AppBar color='primary'>

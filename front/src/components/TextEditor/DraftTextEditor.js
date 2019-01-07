@@ -1,6 +1,6 @@
 import React from 'react';
-import { Paper, withStyles, Grid, Typography, Divider } from '@material-ui/core';
-import { EditorState, Editor, RichUtils, CompositeDecorator } from 'draft-js';
+import { Paper, withStyles, Grid, Typography, Divider, Button } from '@material-ui/core';
+import { EditorState, Editor, RichUtils, convertToRaw } from 'draft-js';
 import BlockStyleControls from './BlockStyleControls';
 import InlineStyleControls from './InlineStyleControls';
 
@@ -20,17 +20,12 @@ const styles = theme => ({
         textAlign: "center",
     },
     custom: {
-        color: "blue",
+        // color: "blue",
+        // height: "10em",
+        // width: "50em",
     }
 });
 
-// function myBlockStyleFn(contentBlock) {
-//     const type = contentBlock.getType();
-//     console.log("type: " + type)
-//     if (type === 'blockquote') {
-//         //   return 'superFancyBlockquote';
-//     }
-// }
 
 class DraftTextEditor extends React.Component {
 
@@ -39,10 +34,15 @@ class DraftTextEditor extends React.Component {
 
         this.state = { editorState: EditorState.createEmpty() };
 
+        this.focus = () => {
+            this.refs.editor.focus()
+        };
+
         this.onChange = this.onChange.bind(this);
         this.handleKeyCommand = this.handleKeyCommand.bind(this);
         this.toggleBlockType = this.toggleBlockType.bind(this);
         this.toggleInlineStyle = this.toggleInlineStyle.bind(this);
+        this.submit = this.submit.bind(this);
     }
     
     onChange(editorState){
@@ -66,13 +66,18 @@ class DraftTextEditor extends React.Component {
         this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, inlineStyle));
     }
 
+    submit() {
+        console.log("submit");
+        console.log(JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())));
+    }
+
     render() {
         const { classes } = this.props;
         return (
             <Grid container diretion="column" justify="center" alignItems="center" spacing={16}>
                 <Grid item xs={10} >
-                    <Paper className={classes.blue} >
-                        <Typography>Pouet</Typography>
+                    
+                    <Paper className={classes.custom} >
                         <BlockStyleControls
                         editorState={this.state.editorState}
                         onToggle={this.toggleBlockType}/>
@@ -81,12 +86,18 @@ class DraftTextEditor extends React.Component {
                         onToggle={this.toggleInlineStyle}
                         />
                         <Divider variant="middle"></Divider>
+                    <div onClick={this.focus} style={{height:"10em"}}>
                         <Editor
                             editorState={this.state.editorState}
                             onChange={this.onChange}
                             handleKeyCommand={this.handleKeyCommand}
+                            ref='editor'
                         />
-                    </Paper>
+                    </div>
+                   </Paper>
+                </Grid>
+                <Grid item xs={10}>
+                    <Button style={{padding:5}} onClick={this.submit} color="primary">Ok</Button>
                 </Grid>
             </Grid>
         );

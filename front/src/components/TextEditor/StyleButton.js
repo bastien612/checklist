@@ -10,7 +10,11 @@ const styles = theme => ({
       display: "inline-block",
   },
   RichEditorActiveButton: {
-    color: "yellow",
+    color: "#5890ff",
+    cursor: "pointer",
+    marginRight: "16px",
+    padding: "2px 0",
+    display: "inline-block",
   }
 });
 
@@ -27,13 +31,13 @@ class StyleButton extends React.Component {
     render() {
       const { classes } = this.props;
 
-      
-      // if (this.props.active) {
-      //   className += ' RichEditorActiveButton';
-      // }
+      let buttonClass = classes.RichEditorStyleButton;
+      if (this.props.active) {
+        buttonClass = classes.RichEditorActiveButton;
+      }
   
       return (
-        <span className={classes.RichEditorStyleButton} onClick={this.onToggle}>
+        <span className={buttonClass} onClick={this.onToggle}>
           {this.props.label}
         </span>
       );
