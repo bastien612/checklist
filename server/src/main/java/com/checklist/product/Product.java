@@ -1,12 +1,15 @@
 package com.checklist.product;
 
 import com.checklist.model.AuditModel;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="product")
-public class Product extends AuditModel {
+public class Product {
 
     @Id
     @GeneratedValue(generator = "product_generator")
@@ -20,6 +23,8 @@ public class Product extends AuditModel {
     @Column(columnDefinition = "name")
     private String name;
 
+    public Product() {}
+
     public Product(String name) {
         this.name = name;
     }
@@ -30,5 +35,31 @@ public class Product extends AuditModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    @CreatedDate
+    private Date createdAt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at", nullable = false)
+    @LastModifiedDate
+    private Date updatedAt;
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }

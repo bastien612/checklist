@@ -1,14 +1,15 @@
 package com.checklist.product;
 
 import com.checklist.errors.NotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductController {
+
+    Logger log = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     private ProductRepository productRepository;
@@ -20,16 +21,14 @@ public class ProductController {
         return product;
     }
 
-    @RequestMapping(value="/add/product", method= RequestMethod.POST)
-    public String addProduct(@RequestParam(value="name", defaultValue="") String name) throws NotFoundException{
-        log.info("Received request on addProduct");
-        if (name.equals("")) {
-            throw new NotFoundException("No product named {" + name + "}");
-        }
+    @PostMapping("/add/product")
+    public Product addProduct(@RequestBody Product produit) throws NotFoundException{
+        //log.info("Received request on addProduct");
+        //if (produit.getName().equals("")) {
+        //    throw new NotFoundException("No product named {" + produit + "}");
+        //}
 
-        Product product = new Product(name);
-        productRepository.save(product);
-        return "Ok";
+        return productRepository.save(produit);
     }
 
 }
