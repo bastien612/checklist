@@ -1,4 +1,4 @@
-package com.notesmanager.configuration;
+package com.checklist.configuration;
 
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 

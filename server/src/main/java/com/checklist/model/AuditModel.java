@@ -1,4 +1,4 @@
-package com.notesmanager.model;
+package com.checklist.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;

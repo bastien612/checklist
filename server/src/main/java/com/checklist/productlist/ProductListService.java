@@ -1,9 +1,10 @@
-package com.notesmanager.productlist;
+package com.checklist.productlist;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+
 
 public interface ProductListService {
 
     public Page<ProductListModel> findPaginated(int page, int size);
+
 }

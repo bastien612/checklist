@@ -1,4 +1,4 @@
-package com.notesmanager.productlist;
+package com.checklist.productlist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,7 +12,9 @@ public class ProductListServiceImpl {
     private ProductListRepository dao;
 
     public Page<ProductListModel> findPaginated(int page, int size) {
+
         return dao.findAll(PageRequest.of(page, size));
     }
+
 
 }

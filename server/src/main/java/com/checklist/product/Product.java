@@ -1,12 +1,12 @@
-package com.notesmanager.product;
+package com.checklist.product;
 
-import com.notesmanager.model.AuditModel;
+import com.checklist.model.AuditModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="product")
-public class ProductModel extends AuditModel {
+public class Product extends AuditModel {
 
     @Id
     @GeneratedValue(generator = "product_generator")
@@ -20,7 +20,7 @@ public class ProductModel extends AuditModel {
     @Column(columnDefinition = "name")
     private String name;
 
-    public ProductModel(String name) {
+    public Product(String name) {
         this.name = name;
     }
 

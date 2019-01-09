@@ -1,4 +1,4 @@
-package com.notesmanager.productlist;
+package com.checklist.productlist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,7 +11,7 @@ public class ProductListController {
     private ProductListRepository productListRepository;
 
     @Autowired
-    private ProductListService service;
+    private ProductListServiceImpl service;
 
     @RequestMapping(
             value="/lists",

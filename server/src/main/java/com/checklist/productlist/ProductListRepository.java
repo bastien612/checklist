@@ -1,4 +1,4 @@
-package com.notesmanager.productlist;
+package com.checklist.productlist;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
-package com.notesmanager.productlist;
+package com.checklist.productlist;
 
-import com.notesmanager.model.AuditModel;
-import com.notesmanager.product.ProductModel;
+import com.checklist.model.AuditModel;
+import com.checklist.product.Product;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -26,5 +26,5 @@ public class ProductListModel extends AuditModel {
 
     @ManyToMany(fetch=FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<ProductModel> productList;
+    private List<Product> products;
 }
