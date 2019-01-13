@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import HomePage from './pages/HomePage/HomePage';
-import ConfigPage from './pages/ConfigPage/ConfigPage';
+import HomePage from './pages/user/HomePage/HomePage';
+import ConfigPage from './pages/user/ConfigPage/ConfigPage';
+import CategoryPage from './pages/user/CategoryPage/CategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -29,6 +30,7 @@ export default class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage}/>
               <Route path="/config" component={ConfigPage}/>
+              <Route path="/Category" component={CategoryPage}/>
             </React.Fragment>
           </Router>
       </React.Fragment>
