@@ -6,13 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="checklistdao" />
         <module name="namegendao" />
         <module name="notesmanager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="checklistdao" target="1.8" />
       <module name="namegendao" target="1.8" />
       <module name="notesmanager" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="checklistdao" options="-parameters" />
+      <module name="notesmanager" options="-parameters" />
+    </option>
   </component>
 </project>
