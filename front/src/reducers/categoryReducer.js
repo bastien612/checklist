@@ -1,4 +1,4 @@
-import { initialState } from '.initialState';
+import initialState from "reducers/initialState";
 import {FETCH_CATEGORY, RECEIVE_CATEGORY} from 'actions/actionTypes';
 
 export default function category(state = initialState.category, action) {

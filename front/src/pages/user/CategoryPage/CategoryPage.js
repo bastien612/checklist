@@ -9,7 +9,7 @@ const styles = theme => ({
 })
 
 class CategoryPage extends React.Component {
-
+    
     render() {
         return (
             <Grid container direction="column" spacing={16}>

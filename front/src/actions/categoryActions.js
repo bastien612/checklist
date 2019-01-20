@@ -10,7 +10,7 @@ export function receiveCategory(json){
 
 export function fetchCategory() {
     return dispatch => {
-        return fetch(url()+ 'categories', {
+        return fetch(url()+ '/categories', {
             method: 'GET',
             mode: 'cors',
             credentials: 'include',
