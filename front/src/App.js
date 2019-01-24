@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import configureStore from 'store/configureStore';
+import {Provider} from 'react-redux';
 import './App.css';
 import HomePage from './pages/user/HomePage/HomePage';
 import ConfigPage from './pages/user/ConfigPage/ConfigPage';
 import CategoryPage from './pages/user/CategoryPage/CategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import rootReducer from 'reducers/rootReducer';
+import { createStore } from 'redux';
 
-const store = configureStore();
+const store = createStore(rootReducer);
 
 export default class App extends Component {
 
@@ -27,13 +29,13 @@ export default class App extends Component {
 
     return (
       <React.Fragment>
-        <Provider store={store}>
+        <Provider  store={store}>
           <Router>
             <React.Fragment>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/config" component={ConfigPage} />
-              <Route path="/Category" component={CategoryPage} />
+              <Route path="/category" component={CategoryPage} />
             </React.Fragment>
           </Router>
         </Provider>

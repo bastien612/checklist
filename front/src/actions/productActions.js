@@ -4,9 +4,9 @@ function url() {
     return 'http://localhost:8080';
 }
 
-export function fetchCategory() {
+export function fetchProduct() {
     return dispatch => {
-        return fetch(url() + '/categories', {
+        return fetch(url() + '/products', {
             method: 'GET',
             mode: 'cors',
             credentials: 'include',
@@ -18,7 +18,7 @@ export function fetchCategory() {
         .then(json =>
             dispatch(
                 {
-                    type: types.RECEIVE_CATEGORY, categories: json.categories
+                    type: types.FETCH_PRODUCT, products: json.products
                 }
             )
         );

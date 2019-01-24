@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, withStyles, Grid } from '@material-ui/core';
 import Header from "components/Layouts/Header"
 import Footer from "components/Layouts/Footer";
-import CategoryList from "components/category/CategoryList";
+import VisibleCategoryList from "components/category/CategoryList/CategoryList";
 
 const styles = theme => ({
 
@@ -17,7 +17,7 @@ class CategoryPage extends React.Component {
                     <Header />
                 </Grid>
                 <Grid item>
-                    <CategoryList/>
+                    <VisibleCategoryList/>
                 </Grid>
             </Grid>
         )
