@@ -6,9 +6,14 @@ import ConfigPage from './pages/user/ConfigPage/ConfigPage';
 import CategoryPage from './pages/user/CategoryPage/CategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from 'reducers/rootReducer';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer, 
+  applyMiddleware(
+    thunkMiddleware
+  ));
 
 export default class App extends Component {
 

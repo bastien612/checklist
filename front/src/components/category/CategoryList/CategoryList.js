@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -11,6 +11,16 @@ const styles = {
 }
 
 class CategoryList extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.fetchCategories = this.fetchCategories.bind(this)
+    }
+
+    fetchCategories() {
+        console.log("categorylist.fetchCategory")
+        this.props.categoryActions.fetchCategories()
+    }
 
     render() {
         const { categories } = this.props;
@@ -25,6 +35,9 @@ class CategoryList extends React.Component {
                     </Grid>
                     )
                 })}
+                <Grid item xs={12}>
+                    <Button variant="contained" color="primary" onClick={this.fetchCategories}>Fetch</Button>
+                </Grid>
             </Grid>
 
         );
