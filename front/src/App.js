@@ -6,14 +6,16 @@ import ConfigPage from './pages/user/ConfigPage/ConfigPage';
 import CategoryPage from './pages/user/CategoryPage/CategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from 'reducers/rootReducer';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(
+  composeEnhancer(applyMiddleware(
     thunkMiddleware
-  ));
+  )));
 
 export default class App extends Component {
 

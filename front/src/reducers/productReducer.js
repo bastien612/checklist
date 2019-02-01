@@ -1,8 +1,7 @@
 import initialState from "reducers/initialState"
-import {FETCH_PRODUCT} from "actions/actionTypes"
+import { FETCH_PRODUCT } from "actions/actionTypes"
 
 export default function productReducer(state = initialState.products, action) {
-    console.log("productReducer " + JSON.stringify(state))
     let newState;
     switch (action.type) {
         case FETCH_PRODUCT:

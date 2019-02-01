@@ -9,9 +9,9 @@ function url() {
 export function fetchCategories() {
     console.log("fetching category")
 
-    return function action(dispatch) {
-        dispatch({ type: types.FETCHING_CATEGORY })
-        axios.get(url())
+    return function (dispatch) {
+        dispatch({ type: types.FETCHING_CATEGORY });
+        return axios.get(url())
             .then(response => {
                 const categories = response.data._embedded.categories.map(category => {
                     return {
@@ -22,8 +22,6 @@ export function fetchCategories() {
                 dispatch({ type: types.RECEIVE_CATEGORY, categories: categories });
             })
     }
-
-
 }
                // const categories = categoriesResponse.categories.map(
                 //     serverCategory => {

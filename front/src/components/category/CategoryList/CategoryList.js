@@ -13,17 +13,18 @@ class CategoryList extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.fetchCategories = this.fetchCategories.bind(this)
     }
 
-    fetchCategories() {
+    fetchCategories = () => {
         this.props.categoryActions.fetchCategories()
     }
 
     render() {
+        console.log("props : " + JSON.stringify(this.props))
         const { categories } = this.props;
-        console.log("Categories : " + JSON.stringify(categories))
+        console.log(categories);
         return (
             <Grid container>
                 <Grid item xs={12}>
@@ -32,7 +33,7 @@ class CategoryList extends React.Component {
                     </Typography>
                 </Grid>
                 {categories.map(category => {
-                    return (<Grid item key={category.id}>
+                    return (<Grid item xs={12} key={category.id}>
                         <Typography>
                             {category.name}
                         </Typography>
@@ -47,8 +48,5 @@ class CategoryList extends React.Component {
         );
     }
 }
-
-
-
 
 export default (withStyles(styles)(CategoryList));
