@@ -15,7 +15,7 @@ public class Category extends AuditModel {
             sequenceName="product_sequence",
             initialValue=1
     )
-    private Long Id;
+    private Long id;
 
     @Column(columnDefinition = "name")
     private String name;

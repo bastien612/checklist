@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import './App.css';
 import HomePage from './pages/user/HomePage/HomePage';
 import ConfigPage from './pages/user/ConfigPage/ConfigPage';
@@ -10,7 +10,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
 const store = createStore(
-  rootReducer, 
+  rootReducer,
   applyMiddleware(
     thunkMiddleware
   ));
@@ -34,13 +34,14 @@ export default class App extends Component {
 
     return (
       <React.Fragment>
-        <Provider  store={store}>
+        <Provider store={store}>
           <Router>
             <React.Fragment>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/config" component={ConfigPage} />
               <Route path="/category" component={CategoryPage} />
+              <Route path="/createCategory" component={CategoryPage} />
             </React.Fragment>
           </Router>
         </Provider>

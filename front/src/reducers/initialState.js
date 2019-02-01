@@ -1,5 +1,5 @@
 export default {
-    categories: [{id: "1", name:"pouet"}],
+    categories: [],
     products: [],
     porductsLists: []
 }
