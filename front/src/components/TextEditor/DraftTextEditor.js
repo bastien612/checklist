@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, withStyles, Grid, Typography, Divider, Button } from '@material-ui/core';
+import { Paper, withStyles, Grid, Divider, Button } from '@material-ui/core';
 import { EditorState, Editor, RichUtils, convertToRaw } from 'draft-js';
 import BlockStyleControls from './BlockStyleControls';
 import InlineStyleControls from './InlineStyleControls';
@@ -44,8 +44,8 @@ class DraftTextEditor extends React.Component {
         this.toggleInlineStyle = this.toggleInlineStyle.bind(this);
         this.submit = this.submit.bind(this);
     }
-    
-    onChange(editorState){
+
+    onChange(editorState) {
         return this.setState({ editorState });
     }
 
@@ -62,7 +62,7 @@ class DraftTextEditor extends React.Component {
         this.onChange(RichUtils.toggleBlockType(this.state.editorState, blockType));
     }
 
-    toggleInlineStyle(inlineStyle){
+    toggleInlineStyle(inlineStyle) {
         this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, inlineStyle));
     }
 
@@ -76,28 +76,28 @@ class DraftTextEditor extends React.Component {
         return (
             <Grid container diretion="column" justify="center" alignItems="center" spacing={16}>
                 <Grid item xs={10} >
-                    
+
                     <Paper className={classes.custom} >
                         <BlockStyleControls
-                        editorState={this.state.editorState}
-                        onToggle={this.toggleBlockType}/>
+                            editorState={this.state.editorState}
+                            onToggle={this.toggleBlockType} />
                         <InlineStyleControls
-                        editorState={this.state.editorState}
-                        onToggle={this.toggleInlineStyle}
+                            editorState={this.state.editorState}
+                            onToggle={this.toggleInlineStyle}
                         />
                         <Divider variant="middle"></Divider>
-                    <div onClick={this.focus} style={{height:"10em"}}>
-                        <Editor
-                            editorState={this.state.editorState}
-                            onChange={this.onChange}
-                            handleKeyCommand={this.handleKeyCommand}
-                            ref='editor'
-                        />
-                    </div>
-                   </Paper>
+                        <div onClick={this.focus} style={{ height: "10em" }}>
+                            <Editor
+                                editorState={this.state.editorState}
+                                onChange={this.onChange}
+                                handleKeyCommand={this.handleKeyCommand}
+                                ref='editor'
+                            />
+                        </div>
+                    </Paper>
                 </Grid>
                 <Grid item xs={10}>
-                    <Button style={{padding:5}} onClick={this.submit} color="primary">Ok</Button>
+                    <Button style={{ padding: 5 }} onClick={this.submit} color="primary">Ok</Button>
                 </Grid>
             </Grid>
         );

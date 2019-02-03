@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './pages/user/HomePage/HomePage';
 import ConfigPage from './pages/user/ConfigPage/ConfigPage';
 import CategoryPage from './pages/user/CategoryPage/CategoryPage';
+import CreateCategoryPage from './pages/user/CreateCategoryPage/CreateCategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from 'reducers/rootReducer';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -43,7 +44,7 @@ export default class App extends Component {
               <Route exact path="/home" component={HomePage} />
               <Route path="/config" component={ConfigPage} />
               <Route path="/category" component={CategoryPage} />
-              <Route path="/createCategory" component={CategoryPage} />
+              <Route path="/createCategory" component={CreateCategoryPage} />
             </React.Fragment>
           </Router>
         </Provider>

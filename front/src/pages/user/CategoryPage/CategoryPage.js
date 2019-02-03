@@ -1,11 +1,10 @@
 import React from 'react';
-import { Typography, withStyles, Grid } from '@material-ui/core';
+import { withStyles, Grid } from '@material-ui/core';
 import Header from "components/Layouts/Header"
-import Footer from "components/Layouts/Footer";
 import CategoryList from "components/category/CategoryList/CategoryListContainer";
 import { Link } from "react-router-dom";
 
-const styles = theme => ({
+const styles = () => ({
 
 })
 
@@ -23,7 +22,6 @@ class CategoryPage extends React.Component {
                 <Grid>
                     <Link to="/createCategory">Créer category</Link>
                 </Grid>
-
             </Grid>
         )
     }

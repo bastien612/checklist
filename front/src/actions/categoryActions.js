@@ -7,7 +7,6 @@ function url() {
 }
 
 export function fetchCategories() {
-    console.log("fetching category")
 
     return function (dispatch) {
         dispatch({ type: types.FETCHING_CATEGORY });
@@ -23,26 +22,3 @@ export function fetchCategories() {
             })
     }
 }
-               // const categories = categoriesResponse.categories.map(
-                //     serverCategory => {
-                //     id: serverCategory.id,
-                //     name: serverCategory.name});
-
-    // return dispatch => {
-    //     return fetch(url() + '/categories', {
-    //         method: 'GET',
-    //         mode: 'cors',
-    //         credentials: 'include',
-    //         headers: {
-    //             Accept: 'application/json'
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(json =>
-    //         dispatch(
-    //             {
-    //                 type: types.RECEIVE_CATEGORY, categories: json.categories
-    //             }
-    //         )
-    //     );
-    // }
