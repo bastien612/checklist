@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from 'reducers/rootReducer';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import CalendarPage from 'pages/user/CalendarPage/CalendarPage';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -45,6 +46,7 @@ export default class App extends Component {
               <Route path="/config" component={ConfigPage} />
               <Route path="/category" component={CategoryPage} />
               <Route path="/createCategory" component={CreateCategoryPage} />
+              <Route path="/calendar" component={CalendarPage} />
             </React.Fragment>
           </Router>
         </Provider>

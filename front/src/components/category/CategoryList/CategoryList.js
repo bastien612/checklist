@@ -1,6 +1,6 @@
-import React from 'react';
-import { Typography, Grid, Button, Paper } from '@material-ui/core';
+import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 
 const styles = {

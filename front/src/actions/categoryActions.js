@@ -22,3 +22,23 @@ export function fetchCategories() {
             })
     }
 }
+
+export function postCategory(name) {
+
+    const category = { name: name };
+
+    return function (dispatch) {
+        dispatch({ type: types.POSTING_CATEGORY });
+        return axios.post(url(), category)
+            .then(response => {
+                dispatch({ type: types.POSTING_CATEGORY, status: response.status })
+                if (response.status === 200) {
+                    console.log("Response 200 ok");
+                }
+                else {
+                    throw new Error(`Error status : ${response.status} | HTML text : ${response.statusText}`);
+                }
+            })
+            .catch(error => alert(error));
+    }
+}
