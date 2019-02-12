@@ -1,0 +1,15 @@
+.react-calendar-timeline .rct-sidebar-header{
+    /* background: #0097A7 */
+    background: #0097A7;
+    /* color:  #0097A7; */
+    /* border-color: #000000;
+    border-style: solid; */
+  }
+  .react-calendar-timeline .rct-header .rct-label-group{
+    /* background: #0097A7 #9CCC65 */
+    background:  #0097A7;
+    font-family:"robotto";
+    /* color:  #0097A7; */
+    /* border-color: #000000; */
+    /* border-style: solid; */
+  }

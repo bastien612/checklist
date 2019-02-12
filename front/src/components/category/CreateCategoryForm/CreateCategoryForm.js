@@ -1,14 +1,17 @@
 import { Button, Grid, TextField } from '@material-ui/core';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link, withRouter } from 'react-router-dom';
 
 class CreateCategoryForm extends React.Component {
 
     handleSubmitCategory = (value) => {
 
-        console.log("submit !!");
-        console.log(this.props.form);
+        console.log("submit !! ");
+        console.log(value);
+        // console.log(this.props.form);
         this.props.categoryActions.postCategory(value.name);
+        this.props.history.push("/category");
     }
 
     render() {
@@ -33,6 +36,6 @@ class CreateCategoryForm extends React.Component {
     }
 }
 
-export default reduxForm({
+export default withRouter(reduxForm({
     form: 'createCategory'
-})(CreateCategoryForm);
+})(CreateCategoryForm));

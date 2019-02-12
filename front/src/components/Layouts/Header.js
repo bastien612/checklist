@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const styles = {
     grow: {
@@ -16,11 +17,27 @@ function Header(props) {
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h5" color="inherit" >
+                    <Typography variant="h5" color="inherit">
                         Checklist
                     </Typography>
 
+                    <Link to="/category">
+                        <Typography variant="h5" color="inherit">
+                            Category
+                        </Typography>
+                    </Link>
 
+                    <Link to="/config">
+                        <Typography variant="h5" color="inherit">
+                            Configuration
+                        </Typography>
+                    </Link>
+
+                    <Link to="/calendar">
+                        <Typography variant="h5" color="inherit">
+                            Calendrier
+                        </Typography>
+                    </Link>
                 </Toolbar>
             </AppBar>
             {/* <AppBar color='primary'>

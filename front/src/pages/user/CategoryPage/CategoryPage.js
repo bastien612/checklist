@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles, Grid } from '@material-ui/core';
-import Header from "components/Layouts/Header"
+import Header from "components/Layouts/Header";
 import CategoryList from "components/category/CategoryList/CategoryListContainer";
 import { Link } from "react-router-dom";
 

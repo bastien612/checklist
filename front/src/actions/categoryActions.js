@@ -24,7 +24,7 @@ export function fetchCategories() {
 }
 
 export function postCategory(name) {
-
+    console.log("pouet:" + name);
     const category = { name: name };
 
     return function (dispatch) {
@@ -34,6 +34,8 @@ export function postCategory(name) {
                 dispatch({ type: types.POSTING_CATEGORY, status: response.status })
                 if (response.status === 200) {
                     console.log("Response 200 ok");
+                } else if (response.status === 201) {
+                    console.log("Response 201 ok");
                 }
                 else {
                     throw new Error(`Error status : ${response.status} | HTML text : ${response.statusText}`);
