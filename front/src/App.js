@@ -10,6 +10,7 @@ import rootReducer from 'reducers/rootReducer';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import CalendarPage from 'pages/user/CalendarPage/CalendarPage';
+import MapPage from './pages/user/MapPage/MapPage';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
