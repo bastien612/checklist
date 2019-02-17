@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import './App.css';
 import HomePage from './pages/user/HomePage/HomePage';
 import ConfigPage from './pages/user/ConfigPage/ConfigPage';
-import CategoryPage from './pages/user/CategoryPage/CategoryPage';
+import CategoryListPage from './pages/user/CategoryListPage/CategoryListPage';
 import CreateCategoryPage from './pages/user/CreateCategoryPage/CreateCategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from 'reducers/rootReducer';
@@ -45,7 +45,7 @@ export default class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/config" component={ConfigPage} />
-              <Route path="/category" component={CategoryPage} />
+              <Route path="/category" component={CategoryListPage} />
               <Route path="/createCategory" component={CreateCategoryPage} />
               <Route path="/calendar" component={CalendarPage} />
               <Route path="/map" component={MapPage} />

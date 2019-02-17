@@ -8,7 +8,7 @@ const styles = () => ({
 
 })
 
-class CategoryPage extends React.Component {
+class CategoryListPage extends React.Component {
 
     render() {
         return (
@@ -27,4 +27,4 @@ class CategoryPage extends React.Component {
     }
 }
 
-export default withStyles(styles)(CategoryPage);
+export default withStyles(styles)(CategoryListPage);

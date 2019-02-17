@@ -18,7 +18,7 @@ const styles = () => ({
 // const defaultTimeStart = moment().hours(7);
 // const defaultTimeEnd = moment().hours(22);
 
-class CategoryPage extends React.Component {
+class CategoryListPage extends React.Component {
 
     render() {
         return (
@@ -37,4 +37,4 @@ class CategoryPage extends React.Component {
     }
 }
 
-export default withStyles(styles)(CategoryPage);
+export default withStyles(styles)(CategoryListPage);

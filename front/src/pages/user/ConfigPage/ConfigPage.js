@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from 'components/Layouts/Header';
 
 
 function ConfigPage(props) {
     return (
-        <div>Pouet config</div>
+        <div>
+            <Header></Header>
+            <div>No configurations yet</div>
+        </div>
+
     )
 }
 
