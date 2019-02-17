@@ -15,9 +15,15 @@ const styles = {
     },
     navlinks: {
         textDecoration: 'none',
+
     },
     navTitles: {
         color: "white",
+    },
+    activeTab: {
+        textDecoration: "line-through",
+        fontWeight: 'bold',
+        color: 'red'
     }
 
 }
@@ -45,7 +51,8 @@ class Header extends React.Component {
                 anchorEl={categoryMenuAnchor}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
                 open={isMenuOpen}
-                onClose={this.handleMenuClose}>
+                onClose={this.handleMenuClose}
+                getContentAnchorEl={null}>
                 <Link to="/category" className={classes.navlinks}>
                     <MenuItem>Lister</MenuItem>
                 </Link>
@@ -61,30 +68,28 @@ class Header extends React.Component {
                     <Toolbar>
                         <Grid container spacing={16}>
                             <Grid item xs={2}>
-                                <NavLink to="/home" className={classes.navlinks}>
+                                <NavLink to="/home" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
                                     <Typography variant="h5" className={classes.navTitles}>Checklist</Typography>
                                 </NavLink >
                             </Grid>
                             <Grid item xs={10}>
                                 <Grid container justify="flex-end" spacing={16}>
                                     <Grid item>
-                                        {/* <Button onClick={this.handleCategoryMenuOpen}> */}
                                         <Typography onClick={this.handleCategoryMenuOpen} variant="h5" className={classes.navTitles} >Category</Typography>
-                                        {/* </Button> */}
                                     </Grid>
                                     <Grid item>
-                                        <NavLink to="/config" className={classes.navlinks}>
-                                            <Typography variant="h5" className={classes.navTitles} color="inherit">Configuration</Typography>
+                                        <NavLink to="/config" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
+                                            <Typography variant="h5" className={classes.navTitles}>Configuration</Typography>
                                         </NavLink>
                                     </Grid>
                                     <Grid item>
-                                        <NavLink to="/calendar" className={classes.navlinks}>
-                                            <Typography variant="h5" className={classes.navTitles} color="inherit">Calendrier</Typography>
+                                        <NavLink to="/calendar" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
+                                            <Typography variant="h5" className={classes.navTitles} >Calendrier</Typography>
                                         </NavLink>
                                     </Grid>
                                     <Grid item>
-                                        <NavLink to="/map" className={classes.navlinks}>
-                                            <Typography variant="h5" className={classes.navTitles} color="inherit">Carte</Typography>
+                                        <NavLink to="/map" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
+                                            <Typography variant="h5" className={classes.navTitles} >Carte</Typography>
                                         </NavLink>
                                     </Grid>
                                 </Grid>
