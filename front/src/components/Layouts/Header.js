@@ -20,6 +20,9 @@ const styles = {
     navTitles: {
         color: "white",
     },
+    menuItemTitle: {
+        color: "black",
+    },
     activeTab: {
         textDecoration: "line-through",
         fontWeight: 'bold',
@@ -54,12 +57,12 @@ class Header extends React.Component {
                 onClose={this.handleMenuClose}
                 getContentAnchorEl={null}>
                 <MenuItem>
-                    <Link to="/category" className={classes.navlinks}>
+                    <Link to="/category" className={classes.navlinks + " " + classes.menuItemTitle}>
                         Lister
                     </Link>
                 </MenuItem>
                 <MenuItem>
-                    <Link to="/createCategory" className={classes.navlinks}>
+                    <Link to="/createCategory" className={classes.navlinks + " " + classes.menuItemTitle}>
                         Créer
                     </Link>
                 </MenuItem>
