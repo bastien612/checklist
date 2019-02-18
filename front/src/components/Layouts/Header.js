@@ -53,12 +53,16 @@ class Header extends React.Component {
                 open={isMenuOpen}
                 onClose={this.handleMenuClose}
                 getContentAnchorEl={null}>
-                <Link to="/category" className={classes.navlinks}>
-                    <MenuItem>Lister</MenuItem>
-                </Link>
-                <Link to="/createCategory" className={classes.navlinks}>
-                    <MenuItem>Créer</MenuItem>
-                </Link>
+                <MenuItem>
+                    <Link to="/category" className={classes.navlinks}>
+                        Lister
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link to="/createCategory" className={classes.navlinks}>
+                        Créer
+                    </Link>
+                </MenuItem>
                 <MenuItem>Modifier</MenuItem>
             </Menu >
 
