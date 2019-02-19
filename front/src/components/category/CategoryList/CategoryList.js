@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, Typography } from '@material-ui/core';
+import { Button, Grid, Paper, Typography, ListItemText, ListItem, List } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import React from 'react';
 
@@ -22,18 +22,25 @@ class CategoryList extends React.Component {
             <Paper>
                 <Grid container>
                     <Grid item xs={12}>
-                        <Typography variant="h1" align='center' gutterBottom>
+                        <Typography variant="h3" align='center' gutterBottom>
                             Categories
                         </Typography>
                     </Grid>
-                    {categories.map(category => {
-                        return (<Grid item xs={12} key={category.id}>
-                            <Typography>
-                                {category.name}
-                            </Typography>
-                        </Grid>
-                        )
-                    })}
+
+
+                    <Grid item xs={12} >
+                        <List>
+                            {categories.map(category => {
+                                return (
+                                    <ListItem key={category.id}>
+                                        <ListItemText>
+                                            {category.name}
+                                        </ListItemText>
+                                    </ListItem>
+                                )
+                            })}
+                        </List>
+                    </Grid>
                     <Grid item xs={12}>
                         <Button variant="contained" color="primary" onClick={categoryActions.fetchCategories}>Fetch</Button>
                     </Grid>

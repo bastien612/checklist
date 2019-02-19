@@ -18,7 +18,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         categoryActions: bindActionCreators(categoryActions, dispatch)
-
     };
 }
 
