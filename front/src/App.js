@@ -45,8 +45,8 @@ export default class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/config" component={ConfigPage} />
-              <Route path="/category" component={CategoryListPage} />
-              <Route path="/createCategory" component={CreateCategoryPage} />
+              <Route exact path="/category" component={CategoryListPage} />
+              <Route exact path="/category/create" component={CreateCategoryPage} />
               <Route path="/calendar" component={CalendarPage} />
               <Route path="/map" component={MapPage} />
             </React.Fragment>

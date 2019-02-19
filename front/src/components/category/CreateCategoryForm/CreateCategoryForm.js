@@ -53,7 +53,8 @@ class CreateCategoryForm extends React.Component {
                         />
                     </Grid>
                     <Grid item xs={3}>
-                        <Button type='submit' variant="contained" color="primary">Create</Button>
+                        <button type='submit' variant="contained" color="primary">Create</button>
+
                     </Grid>
                 </form>
             </Grid>

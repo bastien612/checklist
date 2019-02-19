@@ -55,16 +55,17 @@ class Header extends React.Component {
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
                 open={isMenuOpen}
                 onClose={this.handleMenuClose}
-                getContentAnchorEl={null}>
+                getContentAnchorEl={null}
+                selected={false}>
                 <MenuItem>
-                    <Link to="/category" className={classes.navlinks + " " + classes.menuItemTitle}>
+                    <NavLink to="/category" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
                         Lister
-                    </Link>
+                    </NavLink>
                 </MenuItem>
                 <MenuItem>
-                    <Link to="/createCategory" className={classes.navlinks + " " + classes.menuItemTitle}>
+                    <NavLink to="/category/create" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
                         Créer
-                    </Link>
+                    </NavLink>
                 </MenuItem>
                 <MenuItem>Modifier</MenuItem>
             </Menu >
@@ -82,7 +83,13 @@ class Header extends React.Component {
                             <Grid item xs={10}>
                                 <Grid container justify="flex-end" spacing={16}>
                                     <Grid item>
-                                        <Typography onClick={this.handleCategoryMenuOpen} variant="h5" className={classes.navTitles} >Category</Typography>
+                                        <Typography
+                                            onClick={this.handleCategoryMenuOpen}
+                                            variant="h5"
+                                            className={classes.navTitles}
+                                        >
+                                            Category
+                                        </Typography>
                                     </Grid>
                                     <Grid item>
                                         <NavLink to="/config" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>

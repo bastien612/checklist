@@ -20,7 +20,7 @@ class CategoryListPage extends React.Component {
                     <CategoryList />
                 </Grid>
                 <Grid>
-                    <Link to="/createCategory">Créer category</Link>
+                    <Link to="/category/create">Créer category</Link>
                 </Grid>
             </Grid>
         )

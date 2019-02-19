@@ -44,3 +44,4 @@ export function postCategory(name) {
             .catch(error => alert(error));
     }
 }
+
