@@ -5,6 +5,8 @@ import CreateCategoryForm from 'components/category/CreateCategoryForm/CreateCat
 
 class CreateCategoryPage extends React.Component {
 
+
+
     render() {
         return (
             <Grid container>

@@ -17,9 +17,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        categoryActions: bindActionCreators(categoryActions, dispatch)
-
+        categoryActions: bindActionCreators(categoryActions, dispatch),
     };
 }
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateCategoryForm)

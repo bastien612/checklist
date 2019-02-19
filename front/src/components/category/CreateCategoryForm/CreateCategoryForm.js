@@ -5,33 +5,58 @@ import { Link, withRouter } from 'react-router-dom';
 
 class CreateCategoryForm extends React.Component {
 
-    handleSubmitCategory = (value) => {
+
+    handleSubmitCategory = (values) => {
 
         console.log("submit !! ");
-        console.log(value);
+        console.log(values);
+        console.log(values.category_name);
         // console.log(this.props.form);
-        this.props.categoryActions.postCategory(value.name);
-        this.props.history.push("/category");
+        // categoryActions.postCategory(values.category_name);
+        // this.props.history.push("/category");
     }
 
     render() {
+        const { handleSubmit } = this.props;
+
+        const renderTextField = ({
+            input,
+            label,
+            meta: { touched, error },
+            ...custom
+        }) => (
+                <TextField
+                    hintText={label}
+                    floatingLabelText={label}
+                    errorText={touched && error}
+                    {...input}
+                    {...custom}
+                />
+            )
+
         return (
-            <form onSubmit={this.handleSubmitCategory}>
-                <Grid container>
+            <Grid container>
+                <form onSubmit={handleSubmit(this.handleSubmitCategory)}>
+
                     <Grid item xs={12}>
                         <Field
-                            name='name'
-                            component={TextField}
-                            type='text'
+                            name='category_name'
+                            component={renderTextField}
                             label='Nom de la catégorie'
-                            variant="filled"
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Field
+                            name='type'
+                            component="input"
+                            label='Type de la catégorie'
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <Button type='submit' variant="contained" color="primary">Create</Button>
                     </Grid>
-                </Grid>
-            </form>
+                </form>
+            </Grid>
         )
     }
 }
