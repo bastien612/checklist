@@ -1,6 +1,6 @@
 import axios from 'axios';
-import * as types from './actionTypes';
-
+import * as types from 'actions/actionTypes';
+import * as categoryService from 'services/categoryService';
 
 function url() {
     return 'http://localhost:8080/categories';
@@ -13,10 +13,7 @@ export function fetchCategories() {
         return axios.get(url())
             .then(response => {
                 const categories = response.data._embedded.categories.map(category => {
-                    return {
-                        id: category._links.self.href,
-                        name: category.name
-                    }
+                    return categoryService.parseServerCategory(category)
                 })
                 dispatch({ type: types.RECEIVE_CATEGORY, categories: categories });
             })
@@ -24,16 +21,16 @@ export function fetchCategories() {
 }
 
 export function postCategory(name) {
-    const category = { name: name };
+    const categoryToSend = { name: name };
 
     return function (dispatch) {
         dispatch({ type: types.POSTING_CATEGORY });
-        return axios.post(url(), category)
+        return axios.post(url(), categoryToSend)
             .then(response => {
                 dispatch({ type: types.POSTING_CATEGORY, status: response.status })
-                if (response.status === 200 || response.status === 200) {
-                    console.log(`Response ${response.status} ok`);
-                    dispatch({ type: types.NEW_CATEGORY, categories: categories })
+                if (response.status === 200 || response.status === 201) {
+                    const category = categoryService.parseServerCategory(response.data);
+                    dispatch({ type: types.NEW_CATEGORY, category: category });
                     dispatch({ type: types.POST_CATEGORY_SUCCESS });
                 } else {
                     throw new Error(`Error status : ${response.status} | HTML text : ${response.statusText}`);

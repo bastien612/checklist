@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { CardHeader, Typography, Grid, withStyles } from '@material-ui/core';
-import { getNotes } from 'services/NotesService';
+import { getNotes } from 'services/notesService';
 import Header from "components/Layouts/Header"
 import Footer from "components/Layouts/Footer";
 import DraftTextEditor from "components/TextEditor/DraftTextEditor"
