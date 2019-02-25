@@ -22,7 +22,7 @@ public class Product extends AuditModel{
 
     @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(
-            name="category_product",
+            name="rel_category_product",
             joinColumns={@JoinColumn(name = "product_id")},
             inverseJoinColumns = {@JoinColumn(name = "category_id")}
 

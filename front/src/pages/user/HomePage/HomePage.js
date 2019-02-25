@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { CardHeader, Typography, Grid, withStyles } from '@material-ui/core';
-import { getNotes } from 'services/notesService';
 import Header from "components/Layouts/Header"
 import Footer from "components/Layouts/Footer";
 import DraftTextEditor from "components/TextEditor/DraftTextEditor"
@@ -25,19 +24,7 @@ class HomePage extends React.Component {
 
     render() {
         // const classes = this.props;
-        const notes = getNotes();
-        const cardList = notes.map(note =>
-            <Grid key={note.id} item xs={12}>
-                <Card >
-                    <CardHeader></CardHeader>
-                    <CardContent>
-                        <Typography>{note.title}</Typography>
-                        <Typography>{note.content}</Typography>
-                    </CardContent>
-                </Card>
-            </Grid>
 
-        );
 
         return (
             <Grid container direction="column" spacing={16}>
@@ -48,7 +35,6 @@ class HomePage extends React.Component {
                     <Grid container direction="row" spacing={8}>
                         <Grid item xs={3} >
                             <Grid container direction="column" spacing={8}>
-                                {cardList}
                             </Grid>
                         </Grid>
 
