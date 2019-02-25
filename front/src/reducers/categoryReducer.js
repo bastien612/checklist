@@ -12,14 +12,8 @@ const categoryReducer = createReducer(initialState.categories, {
         return state;
     },
     [NEW_CATEGORY]: (state, action) => {
-        // let categories = JSON.parse(JSON.stringify(state.categories))
-        console.log(action.category);
-        console.log("coucou");
-        // state = action.category;
-        // state.categories.push(action.category)
-        return [...state, action.category];
-        // categories.push(action.category)
-        // return state.categories = categories;
+        state.push(action.category)
+        return state;
     }
 });
 export default categoryReducer;
