@@ -32,7 +32,7 @@ class ProductPage extends React.Component {
                     <Header />
                 </Grid>
                 <Grid item >
-
+                    
                 </Grid>
             </Grid>
         )

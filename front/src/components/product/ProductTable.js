@@ -19,7 +19,7 @@ class CategoryList extends React.Component {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-
+                    
                 </TableBody>
 
             </Table>

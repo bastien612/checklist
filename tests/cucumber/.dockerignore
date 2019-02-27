@@ -1,0 +1,11 @@
+### IDE
+.vscode
+
+### Generated output
+.outputoutput
+.git*
+README*
+
+.env.development.local
+
+node_modules/
