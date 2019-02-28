@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import './App.css';
-import HomePage from './pages/user/HomePage/HomePage';
-import ConfigPage from './pages/user/ConfigPage/ConfigPage';
-import CategoryListPage from './pages/user/CategoryListPage/CategoryListPage';
-import CreateCategoryPage from './pages/user/CreateCategoryPage/CreateCategoryPage';
+import 'App.css';
+import HomePage from 'pages/user/HomePage/HomePage';
+import ConfigPage from 'pages/user/ConfigPage/ConfigPage';
+import CategoryListPage from 'pages/user/CategoryListPage/CategoryListPage';
+import CreateCategoryPage from 'pages/user/CreateCategoryPage/CreateCategoryPage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from 'reducers/rootReducer';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import CalendarPage from 'pages/user/CalendarPage/CalendarPage';
-import MapPage from './pages/user/MapPage/MapPage';
+import MapPage from 'pages/user/MapPage/MapPage';
+import ProductPage from 'pages/user/ProductPage/ProductPage';
+import CreateProductPage from 'pages/user/CreateProductPage/CreateProductPage';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -49,6 +51,8 @@ export default class App extends Component {
               <Route exact path="/category/create" component={CreateCategoryPage} />
               <Route path="/calendar" component={CalendarPage} />
               <Route path="/map" component={MapPage} />
+              <Route exact path="/product" component={ProductPage} />
+              <Route exact path="/product/create" component={CreateProductPage} />
             </React.Fragment>
           </Router>
         </Provider>

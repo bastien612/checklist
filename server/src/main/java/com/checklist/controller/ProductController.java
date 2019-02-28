@@ -1,4 +1,3 @@
-/*
 package com.checklist.controller;
 
 import com.checklist.errors.NotFoundException;
@@ -43,6 +42,4 @@ public class ProductController {
     public void addSet(@RequestBody Set<Product> items) {
         items.forEach(item -> service.save(item));
     }
-
 }
-*/

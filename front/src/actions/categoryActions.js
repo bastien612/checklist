@@ -1,16 +1,13 @@
 import axios from 'axios';
 import * as types from 'actions/actionTypes';
 import * as categoryService from 'services/categoryService';
-
-function url() {
-    return 'http://localhost:8080/categories';
-}
+import configs from 'services/configs';
 
 export function fetchCategories() {
 
     return function (dispatch) {
         dispatch({ type: types.FETCHING_CATEGORY });
-        return axios.get(url())
+        return axios.get(configs.BACK_URL)
             .then(response => {
                 const categories = response.data._embedded.categories.map(category => {
                     return categoryService.parseServerCategory(category)
@@ -25,7 +22,7 @@ export function postCategory(name) {
 
     return function (dispatch) {
         dispatch({ type: types.POSTING_CATEGORY });
-        return axios.post(url(), categoryToSend)
+        return axios.post(configs.BACK_URL, categoryToSend)
             .then(response => {
                 dispatch({ type: types.POSTING_CATEGORY, status: response.status })
                 if (response.status === 200 || response.status === 201) {

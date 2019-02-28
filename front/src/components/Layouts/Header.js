@@ -33,7 +33,8 @@ const styles = {
 
 class Header extends React.Component {
     state = {
-        categoryMenuAnchor: null
+        categoryMenuAnchor: null,
+        productMenuAnchor: null,
     }
 
     handleCategoryMenuOpen = event => {
@@ -44,16 +45,25 @@ class Header extends React.Component {
         this.setState({ categoryMenuAnchor: null });
     };
 
+    handleProductMenuOpen = event => {
+        this.setState({ productMenuAnchor: event.currentTarget });
+    };
+
+    handleProductMenuClose = () => {
+        this.setState({ productMenuAnchor: null });
+    };
+
     render() {
         const { classes } = this.props;
-        const { categoryMenuAnchor } = this.state;
-        const isMenuOpen = Boolean(categoryMenuAnchor);
+        const { categoryMenuAnchor, productMenuAnchor } = this.state;
+        const isCategoryMenuOpen = Boolean(categoryMenuAnchor);
+        const isProductMenuOpen = Boolean(productMenuAnchor);
 
         const categoryMenu =
             <Menu
                 anchorEl={categoryMenuAnchor}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-                open={isMenuOpen}
+                open={isCategoryMenuOpen}
                 onClose={this.handleMenuClose}
                 getContentAnchorEl={null}
                 selected={false}>
@@ -66,6 +76,27 @@ class Header extends React.Component {
                     <NavLink to="/category/create" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
                         Créer
                     </NavLink>
+                </MenuItem>
+                <MenuItem>Modifier</MenuItem>
+            </Menu >
+
+        const productMenu =
+            <Menu
+                anchorEl={productMenuAnchor}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                open={isProductMenuOpen}
+                onClose={this.handleMenuClose}
+                getContentAnchorEl={null}
+                selected={false}>
+                <MenuItem>
+                    <NavLink to="/product" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
+                        Lister
+        </NavLink>
+                </MenuItem>
+                <MenuItem>
+                    <NavLink to="/product/create" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
+                        Créer
+        </NavLink>
                 </MenuItem>
                 <MenuItem>Modifier</MenuItem>
             </Menu >
@@ -92,6 +123,15 @@ class Header extends React.Component {
                                         </Typography>
                                     </Grid>
                                     <Grid item>
+                                        <Typography
+                                            onClick={this.handleProductMenuOpen}
+                                            variant="h5"
+                                            className={classes.navTitles}
+                                        >
+                                            Produits
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item>
                                         <NavLink to="/config" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
                                             <Typography variant="h5" className={classes.navTitles}>Configuration</Typography>
                                         </NavLink>
@@ -112,6 +152,7 @@ class Header extends React.Component {
                     </Toolbar>
                 </AppBar>
                 {categoryMenu}
+                {productMenu}
             </div >
         );
     }

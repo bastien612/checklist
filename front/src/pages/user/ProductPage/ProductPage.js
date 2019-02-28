@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { CardHeader, Typography, Grid, withStyles } from '@material-ui/core';
-import Header from "components/Layouts/Header"
-import DraftTextEditor from "components/TextEditor/DraftTextEditor"
+import { CardHeader, Typography, Grid, withStyles, Link } from '@material-ui/core';
+import Header from "components/Layouts/Header";
+import DraftTextEditor from "components/TextEditor/DraftTextEditor";
+import ProductList from "components/product/ProductList";
 
 const styles = theme => ({
     // noteCard : {
@@ -31,12 +32,15 @@ class ProductPage extends React.Component {
                 <Grid item>
                     <Header />
                 </Grid>
-                <Grid item >
-                    
+                <Grid item>
+                    <ProductList />
+                </Grid>
+                <Grid>
+                    <Link to="/product/create">Créer Produit</Link>
                 </Grid>
             </Grid>
         )
     }
 }
 
-export default withStyles(styles)(HomePage);
+export default withStyles(styles)(ProductPage);
