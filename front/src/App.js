@@ -13,6 +13,7 @@ import CalendarPage from 'pages/user/CalendarPage/CalendarPage';
 import MapPage from 'pages/user/MapPage/MapPage';
 import ProductPage from 'pages/user/ProductPage/ProductPage';
 import CreateProductPage from 'pages/user/CreateProductPage/CreateProductPage';
+import ConnexionPage from 'pages/user/ConnexionPage/ConnexionPage';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -51,6 +52,7 @@ export default class App extends Component {
               <Route exact path="/category/create" component={CreateCategoryPage} />
               <Route path="/calendar" component={CalendarPage} />
               <Route path="/map" component={MapPage} />
+              <Route exact path="/connexion" component={ConnexionPage} />
               <Route exact path="/product" component={ProductPage} />
               <Route exact path="/product/create" component={CreateProductPage} />
             </React.Fragment>

@@ -9,3 +9,5 @@ export const NEW_CATEGORY = 'NEW_CATEGORY';
 export const FETCH_PRODUCT = "FETCH_PRODUCT";
 export const POST_PRODUCT = "POST_PRODUCT";
 export const NEW_PRODUCT = "NEW_PRODUCT";
+
+export const LOGIN_SUCCESSFUL = "LOGIN_SUCCESSFUL";

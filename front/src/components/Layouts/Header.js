@@ -136,6 +136,7 @@ class Header extends React.Component {
                                             <Typography variant="h5" className={classes.navTitles}>Configuration</Typography>
                                         </NavLink>
                                     </Grid>
+
                                     <Grid item>
                                         <NavLink to="/calendar" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
                                             <Typography variant="h5" className={classes.navTitles} >Calendrier</Typography>
@@ -144,6 +145,11 @@ class Header extends React.Component {
                                     <Grid item>
                                         <NavLink to="/map" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
                                             <Typography variant="h5" className={classes.navTitles} >Carte</Typography>
+                                        </NavLink>
+                                    </Grid>
+                                    <Grid item>
+                                        <NavLink to="/connexion" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
+                                            <Typography variant="h5" className={classes.navTitles}>Connexion</Typography>
                                         </NavLink>
                                     </Grid>
                                 </Grid>
