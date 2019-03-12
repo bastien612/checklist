@@ -19,14 +19,9 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
 
-/*
-    @PostMapping("categories/add")
-*/
     @PostMapping(
-            value = "/categories/add")
-    public void addSet(@RequestBody Category categories) {
-        logger.info("Poueeeeeeeet =+");
-        logger.info("Classe " + categories);
-        /*categories.forEach(category -> service.save(category));*/
+            value = "/categories/add/list")
+    public void addSet(@RequestBody List<Category> categories) {
+        categories.forEach(category -> service.save(category));
     }
 }
