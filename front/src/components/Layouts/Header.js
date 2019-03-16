@@ -91,12 +91,12 @@ class Header extends React.Component {
                 <MenuItem>
                     <NavLink to="/product" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
                         Lister
-        </NavLink>
+                    </NavLink>
                 </MenuItem>
                 <MenuItem>
                     <NavLink to="/product/create" activeStyle={{ textDecoration: 'underline' }} className={classes.navlinks + " " + classes.menuItemTitle}>
                         Créer
-        </NavLink>
+                    </NavLink>
                 </MenuItem>
                 <MenuItem>Modifier</MenuItem>
             </Menu >
@@ -113,6 +113,11 @@ class Header extends React.Component {
                             </Grid>
                             <Grid item xs={10}>
                                 <Grid container justify="flex-end" spacing={16}>
+                                    <Grid item>
+                                        <NavLink to="/productsLists" activeStyle={{ textDecoration: 'underline', color: 'white' }} className={classes.navlinks}>
+                                            <Typography variant="h5" className={classes.navTitles} >Liste de produits</Typography>
+                                        </NavLink>
+                                    </Grid>
                                     <Grid item>
                                         <Typography
                                             onClick={this.handleCategoryMenuOpen}

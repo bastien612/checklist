@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { CardHeader, Typography, Grid, withStyles, Link } from '@material-ui/core';
 import Header from "components/Layouts/Header";
-import DraftTextEditor from "components/TextEditor/DraftTextEditor";
+import DraftTextEditor from "components/textEditor/DraftTextEditor";
 import ProductList from "components/product/ProductList";
 
 const styles = theme => ({
@@ -17,13 +17,6 @@ const styles = theme => ({
 })
 
 class ProductPage extends React.Component {
-
-    handleSubmit() {
-    }
-
-    componentDidMount() {
-
-    }
 
     render() {
 

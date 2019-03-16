@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { CardHeader, Typography, Grid, withStyles } from '@material-ui/core';
 import Header from "components/Layouts/Header"
 import Footer from "components/Layouts/Footer";
-import DraftTextEditor from "components/TextEditor/DraftTextEditor"
+import DraftTextEditor from "components/textEditor/DraftTextEditor"
 
 const styles = theme => ({
     // noteCard : {
