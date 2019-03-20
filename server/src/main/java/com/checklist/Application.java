@@ -23,9 +23,7 @@ public class Application {
     ConfigurableApplicationContext ctx;
 
     public static void main(String[] args) {
-
         SpringApplication.run(Application.class, args);
-
     }
 
     /*@PostMapping("quit")

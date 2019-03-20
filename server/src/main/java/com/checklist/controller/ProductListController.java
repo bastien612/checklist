@@ -1,11 +1,11 @@
 /*
 package com.checklist.controller;
 
-import com.checklist.domain.ProductList;
+import com.checklist.model.ProductList;
 import com.checklist.service.productlist.ProductListRepository;
 import com.checklist.service.productlist.ProductListServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
+import org.springframework.data.model.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;

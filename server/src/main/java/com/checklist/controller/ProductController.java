@@ -1,7 +1,7 @@
 package com.checklist.controller;
 
 import com.checklist.errors.NotFoundException;
-import com.checklist.domain.Product;
+import com.checklist.model.Product;
 import com.checklist.service.product.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

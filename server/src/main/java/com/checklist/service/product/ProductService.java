@@ -1,6 +1,6 @@
 package com.checklist.service.product;
 
-import com.checklist.domain.Product;
+import com.checklist.model.Product;
 import org.springframework.stereotype.Service;
 
 @Service

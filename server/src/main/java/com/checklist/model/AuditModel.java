@@ -1,4 +1,4 @@
-package com.checklist.domain;
+package com.checklist.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;
