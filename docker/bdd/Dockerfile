@@ -1,4 +1,4 @@
-FROM postgres:11.1
+FROM postgres:11.2
 
 COPY ./initdb.sh /docker-entrypoint-initdb.d/initdb.sh
 RUN dos2unix /docker-entrypoint-initdb.d/initdb.sh

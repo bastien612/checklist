@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
 
@@ -8,11 +8,11 @@ POSTGRES_DB=${POSTGRES_DB:-$(cat /run/secrets/bi_db_name)}
 
 echo ""
 echo "connecting to database: "
-until psql -q postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB} -c '\l'; do
+until psql -q postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@tsn-bi-db:5432/${POSTGRES_DB} -c '\l'; do
   echo "waiting for database setup ..."
   sleep 1
 done
 echo "database is ready."
 echo ""
 
-top
+exec /entrypoint.sh $@

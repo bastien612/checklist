@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: postgres:11.1
+    image: checklist-db:latest
     ports:
       - 5432:5432
     environment:
@@ -15,9 +15,7 @@ services:
       - db-data:/var/lib/postgresql/data
 
   app:
-    build:
-      context: ../../checklist/
-      dockerfile: Dockerfile
+    image: checklist-back:latest
     depends_on:
       - db
     environment:
@@ -25,6 +23,13 @@ services:
       - POSTGRES_USER=check
       - POSTGRES_DB=check
 
+  proxy:
+    image: checklist-proxy:latest
+    depends_on:
+      - app
+    port:
+      - 7080:80
+    
   adminer:
     image: adminer
     ports:
