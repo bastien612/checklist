@@ -1,7 +1,6 @@
 package com.checklist.service.productlist;
 
-import com.checklist.domain.ProductList;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.checklist.model.ProductList;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

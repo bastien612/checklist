@@ -1,8 +1,8 @@
 /*
-package com.checklist.domain;
+package com.checklist.model;
 
-import com.checklist.domain.Category;
-import com.checklist.domain.Product;
+import com.checklist.model.Category;
+import com.checklist.model.Product;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 

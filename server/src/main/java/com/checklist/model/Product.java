@@ -1,4 +1,4 @@
-package com.checklist.domain;
+package com.checklist.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
