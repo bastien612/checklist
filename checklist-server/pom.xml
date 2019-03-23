@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
+        <groupId>com.checklist</groupId>
+        <artifactId>checklist-parent</artifactId>
+        <version>${revision}</version>
     </parent>
 
     <groupId>com.checklist</groupId>
-    <artifactId>checklistdao</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>checklist-server</artifactId>
+    <version>${revision}</version>
 
     <properties>
         <java.version>1.8</java.version>
