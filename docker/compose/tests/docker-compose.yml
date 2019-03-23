@@ -2,10 +2,8 @@ version: '3'
 
 services:
   test-e2e:
+    image: checklist-tests:latest
     container_name: test-e2e
-    build:
-      context: ../../tests/
-      dockerfile: Dockerfile
     depends_on: 
       - selenium-hub
     environment:
