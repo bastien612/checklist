@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.laboratoire.checklist</groupId>
-        <artifactId>checklist-docker</artifactId>
+        <artifactId>checklist-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
