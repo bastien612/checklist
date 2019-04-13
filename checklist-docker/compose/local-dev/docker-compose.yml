@@ -16,6 +16,26 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
+  app:
+    build: 
+      context: ../../checklist-back/build
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_PASSWORD=check
+      - POSTGRES_USER=check
+      - POSTGRES_DB=check
+
+  proxy:
+    build: 
+      context: ../../checklist-proxy/build
+      dockerfile: Dockerfile
+    depends_on:
+      - app
+    ports:
+      - 7080:80
+    
   adminer:
     image: adminer
     ports:

@@ -27,7 +27,7 @@ services:
     image: checklist-proxy:latest
     depends_on:
       - app
-    port:
+    ports:
       - 7080:80
     
   adminer:
