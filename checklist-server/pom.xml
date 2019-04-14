@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -47,7 +47,8 @@
                             <artifactId>checklist-server</artifactId>
                             <version>${revision}</version>
                             <type>jar</type>
-                            <outputDirectory>${project.basedir}/../checklist-docker/checklist-back/build</outputDirectory>
+                            <outputDirectory>${project.basedir}/../checklist-docker/checklist-back/build
+                            </outputDirectory>
                             <destFileName>checklist-server.jar</destFileName>
                         </artifactItem>
                     </artifactItems>
@@ -103,16 +104,21 @@
             <version>2.3.0-b170201.1204</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>javax.activation</groupId>-->
+<!--            <artifactId>activation</artifactId>-->
+<!--            <version>1.1</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.jaxb</groupId>-->
+<!--            <artifactId>jaxb-runtime</artifactId>-->
+<!--            <version>2.3.0-b170127.1453</version>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.0-b170127.1453</version>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>5.2.4</version>
         </dependency>
     </dependencies>
 </project>

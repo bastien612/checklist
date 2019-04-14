@@ -7,12 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5432:5432
-    environment:
-      - POSTGRES_PASSWORD=check
-      - POSTGRES_USER=check
-      - POSTGRES_DB=check
-      - CHECKLIST_USER=app
-      - CHECKLIST_PASSWORD=app
+    env_file:
+      - .env
     volumes:
       - db-data:/var/lib/postgresql/data
 
@@ -22,10 +18,8 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
-    environment:
-      - POSTGRES_PASSWORD=check
-      - POSTGRES_USER=check
-      - POSTGRES_DB=check
+    env_file:
+      - .env
 
   proxy:
     build: 
