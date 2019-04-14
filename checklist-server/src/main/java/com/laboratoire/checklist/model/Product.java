@@ -1,7 +1,6 @@
 package com.laboratoire.checklist.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -29,13 +28,13 @@ public class Product extends AuditModel{
     )
     private Set<Category> categories;
 
-    @ManyToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(
-            name = "rel_product_list",
-            joinColumns = {@JoinColumn(name= "product_id")},
-            inverseJoinColumns = {@JoinColumn(name = "product_list_id")}
-            )
-    private Set<ProductList> productLists = new HashSet<ProductList>();
+//    @ManyToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST})
+//    @JoinTable(
+//            name = "rel_product_list",
+//            joinColumns = {@JoinColumn(name= "product_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "product_list_id")}
+//            )
+//    private Set<ProductList> productLists = new HashSet<ProductList>();
 
     public Product() {}
 
@@ -67,12 +66,12 @@ public class Product extends AuditModel{
         this.categories = categories;
     }
 
-    public Set<ProductList> getProductLists() {
-        return productLists;
-    }
-
-    public void setProductLists(Set<ProductList> productLists) {
-        this.productLists = productLists;
-    }
+//    public Set<ProductList> getProductLists() {
+//        return productLists;
+//    }
+//
+//    public void setProductLists(Set<ProductList> productLists) {
+//        this.productLists = productLists;
+//    }
 
 }
