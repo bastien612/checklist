@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     build: 
-      context: ../../checklist-db/build
+      context: ../../checklist-db/src
       dockerfile: Dockerfile
     ports:
       - 5432:5432
@@ -14,7 +14,7 @@ services:
 
   app:
     build: 
-      context: ../../checklist-back/build
+      context: ../../checklist-back/src
       dockerfile: Dockerfile
     depends_on:
       - db
@@ -23,7 +23,7 @@ services:
 
   proxy:
     build: 
-      context: ../../checklist-proxy/build
+      context: ../../checklist-proxy/src
       dockerfile: Dockerfile
     depends_on:
       - app

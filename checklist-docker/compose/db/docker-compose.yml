@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     build: 
-      context: ../../checklist-db/build
+      context: ../../checklist-db/src
       dockerfile: Dockerfile
     ports:
       - 5432:5432
