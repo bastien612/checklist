@@ -8,10 +8,9 @@ COPY entrypoint.sh /app/entrypoint.sh
 RUN dos2unix /app/entrypoint.sh
 
 RUN addgroup -g 1000 check && \
-    adduser -D -u 1000 -G check check
-
-RUN chown check:check -R /app
-RUN chmod 700 -R /app
+    adduser -D -u 1000 -G check check && \
+    chown check:check -R /app && \
+    chmod 700 -R /app
 
 WORKDIR /app
 USER check

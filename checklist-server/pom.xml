@@ -47,7 +47,7 @@
                             <artifactId>checklist-server</artifactId>
                             <version>${revision}</version>
                             <type>jar</type>
-                            <outputDirectory>${project.basedir}/../checklist-docker/checklist-back/build
+                            <outputDirectory>${project.basedir}/../checklist-docker/checklist-dev-back/src
                             </outputDirectory>
                             <destFileName>checklist-server.jar</destFileName>
                         </artifactItem>
