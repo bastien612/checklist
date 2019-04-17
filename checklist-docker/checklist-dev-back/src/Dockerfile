@@ -1,11 +1,9 @@
-FROM openjdk:8u201-jdk-alpine3.9
+FROM maven:3.6.0-jdk-8-alpine
+
+RUN apk update && \
+    apk add --no-cache entr
 
 RUN mkdir /app
-
-COPY ./checklist-server.jar /app/checklist-server.jar
-COPY entrypoint.sh /app/entrypoint.sh
-
-RUN dos2unix /app/entrypoint.sh
 
 RUN addgroup -g 1000 check && \
     adduser -D -u 1000 -G check check && \
@@ -13,6 +11,11 @@ RUN addgroup -g 1000 check && \
     chmod 700 -R /app
 
 WORKDIR /app
+
+COPY entrypoint.sh /app/entrypoint.sh
+RUN dos2unix /app/entrypoint.sh
+COPY ./checklist-server.jar /app/checklist-server.jar
+
 USER check
 
 ENTRYPOINT ["sh", "/app/entrypoint.sh"]

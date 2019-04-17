@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mvn spring-boot:runddd
+mvn spring-boot:run

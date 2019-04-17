@@ -14,12 +14,13 @@ services:
 
   app:
     build: 
-      context: ../../checklist-back/src
+      context: ../../checklist-dev-back/src
       dockerfile: Dockerfile
     depends_on:
       - db
     env_file:
       - .env
+    # entrypoint: sh -c echo /app/checklist-server.jar | entr "/app/entrypoint.sh";
 
   proxy:
     build: 
