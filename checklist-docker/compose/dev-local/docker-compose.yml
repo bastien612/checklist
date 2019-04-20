@@ -14,8 +14,10 @@ services:
 
   app:
     build: 
-      context: ../../checklist-dev-back/src
-      dockerfile: Dockerfile
+      context: ../../../checklist-server/
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .m2:/root/.m2
     depends_on:
       - db
     env_file:

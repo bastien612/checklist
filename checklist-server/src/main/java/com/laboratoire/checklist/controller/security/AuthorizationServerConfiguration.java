@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 
 
 @Configuration
-@EnableAuthorizationServer
+//@EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
     private final String GRANT_TYPE_PASSWORD = "password";
@@ -49,8 +49,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()");
+        security.tokenKeyAccess("permitAll()");
+//                .checkTokenAccess("isAuthenticated()");
     }
 
     @Override
