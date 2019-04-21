@@ -1,6 +1,5 @@
 package com.laboratoire.checklist;
 
-import org.flywaydb.core.Flyway;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,7 +14,7 @@ public class Application {
 
     @GetMapping("/hello")
     String home() {
-        return "Hello";
+        return "yoh";
     }
 
     ConfigurableApplicationContext ctx;

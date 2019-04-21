@@ -137,7 +137,7 @@ Desktop.ini
 ######################
 # Maven
 ######################
-**/.m2/**/*
+**/.m2/
 # Maven Wrapper
 !.mvn/wrapper/maven-wrapper.jar
 
