@@ -135,8 +135,10 @@ Desktop.ini
 !gradle/wrapper/gradle-wrapper.jar
 
 ######################
-# Maven Wrapper
+# Maven
 ######################
+**/.m2/**/*
+# Maven Wrapper
 !.mvn/wrapper/maven-wrapper.jar
 
 ######################
