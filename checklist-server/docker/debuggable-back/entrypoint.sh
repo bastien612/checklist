@@ -12,4 +12,4 @@ echo "database is ready."
 echo ""
 
 echo "pout"
-mvn clean spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000 -Dspring.profiles.active=dev -Dspring.devtools.restart.enabled=true"
+mvn clean spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000 -Dspring.profiles.active=dev"
