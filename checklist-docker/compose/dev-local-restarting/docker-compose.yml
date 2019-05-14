@@ -15,15 +15,17 @@ services:
   app:
     build: 
       context: ../../../checklist-server/
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/restarting-back/Dockerfile
     volumes:
       - ../.m2:/root/.m2
+      - ../../../checklist-server/:/app
     depends_on:
       - db
     env_file:
       - .env
     ports:
       - 8081:8080
+      - 8000:8000
     # entrypoint: sh -c echo /app/checklist-server.jar | entr "/app/entrypoint.sh";
 
   proxy:

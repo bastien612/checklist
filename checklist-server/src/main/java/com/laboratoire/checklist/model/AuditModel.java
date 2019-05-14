@@ -15,7 +15,6 @@ import java.util.Date;
         allowGetters = true
 )
 public class AuditModel {
-
 /*
     @PrePersist
     public void onPrePersist() {

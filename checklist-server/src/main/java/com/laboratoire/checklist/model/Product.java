@@ -2,19 +2,20 @@ package com.laboratoire.checklist.model;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Table(name="product")
 public class Product extends AuditModel{
 
     @Id
-    @GeneratedValue(generator = "product_generator")
+    /*@GeneratedValue(generator = "product_generator")
     @SequenceGenerator(
             name="product_generator",
             sequenceName="product_sequence",
             initialValue=1
-    )
-    private Long id;
+    )*/
+    private UUID id;
 
     @Column(columnDefinition = "name")
     private String name;
@@ -50,11 +51,11 @@ public class Product extends AuditModel{
         this.name = name;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

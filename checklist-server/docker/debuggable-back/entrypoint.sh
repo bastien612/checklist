@@ -9,7 +9,6 @@ while ! nc -z db 5432; do
   sleep 1
 done
 echo "database is ready."
-echo ""
+echo "Debuggable"
 
-echo "pout"
 mvn clean spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000 -Dspring.profiles.active=dev"

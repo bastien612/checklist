@@ -1,20 +1,20 @@
 create table category (
-    id BIGINT PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name TEXT,
-    created_at DATE,
-    updated_at DATE
+    created_at TIMESTAMP with time zone,
+    updated_at TIMESTAMP with time zone
 );
 
 create table product (
-    id BIGINT PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name text,
-    created_at DATE,
-    updated_at DATE
+    created_at TIMESTAMP with time zone,
+    updated_at TIMESTAMP with time zone
 );
 
-create table category_product (
-    product_id BIGINT references product(id),
-    category_id BIGINT references category(id)
+create table rel_category_product (
+    product_id UUID references product(id),
+    category_id UUID references category(id)
 );
 
 --create table rel_product_list (

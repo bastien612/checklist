@@ -9,6 +9,7 @@ while ! nc -z db 5432; do
   sleep 1
 done
 echo "database is ready."
-echo ""
+echo "Restarting"
 
-mvn clean spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev -Dspring.devtools.restart.enabled=true"
+# sh -c "find src/ | entr echo 'coucou'"
+find src/ | entr mvn clean spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev -Dspring.devtools.restart.enabled=true"
